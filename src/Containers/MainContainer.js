@@ -162,6 +162,7 @@ const HeaderContainer = styled.div`
 
 const Title = styled.h1`
     margin: 0px;
+    color: white;
 `
 
 const Logo = styled.img`
@@ -221,6 +222,8 @@ const Modal = styled.div`
     width: 450px;
     height: auto;
     z-index: 2;
+    padding: 20px;
+    color: white;
 `
 
 const CloseButton = styled.button`
@@ -233,8 +236,8 @@ const CloseButton = styled.button`
     text-transform: uppercase;
     &:hover {
         color: #fff;
-        background-color: #5fbb64;
-        border: 1px solid #5fbb64;
+        background-color: black;
+        border: 1px solid black;
         cursor: pointer;
     }
 `
