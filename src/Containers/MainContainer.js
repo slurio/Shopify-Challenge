@@ -54,10 +54,12 @@ class Main extends React.Component {
     // adds movie to nominations and updates its state
     addNominationClickHandler = (movie) => {
             let updatedNominations = [...this.state.nominations]
-            updatedNominations.push(movie)
-            this.setState({
-                nominations: updatedNominations
-            })
+            if (this.state.nominations.length !== 5) {
+                updatedNominations.push(movie)
+                this.setState({
+                    nominations: updatedNominations
+                })
+            }
     }
 
     // removes given movie from nomination and updates its state
