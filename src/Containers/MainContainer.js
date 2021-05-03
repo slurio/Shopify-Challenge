@@ -6,6 +6,7 @@ import logo from '../images/logo.gif';
 import envelope from '../images/envelope.gif';
 import search from '../images/search.svg';
 import { API_KEY } from '../environment';
+import NominationLimitModal from '../Components/NominationLimitModal';
 
 const BASE_URL = `https://www.omdbapi.com/?apikey=${API_KEY}&type=movie&s=`
 
@@ -15,7 +16,8 @@ class Main extends React.Component {
         searchTerm: '',
         error: '',
         results: [],
-        nominations: []
+        nominations: [],
+        nominationLimit: false,
     }
 
     // sets searchTerm state to the input value and calls fetchResults function to get API results
@@ -53,12 +55,16 @@ class Main extends React.Component {
 
     // adds movie to nominations and updates its state
     addNominationClickHandler = (movie) => {
-            let updatedNominations = [...this.state.nominations]
+            let updatedNominations = [...this.state.nominations];
+            let modal = document.querySelector('.test');
+
             if (this.state.nominations.length !== 5) {
                 updatedNominations.push(movie)
                 this.setState({
                     nominations: updatedNominations
                 })
+            } else if (this.state.nominations.length === 5) {
+                this.setState({ nominationLimit: true });
             }
     }
 
@@ -73,9 +79,15 @@ class Main extends React.Component {
         })
     }
 
+    closeModal = (modal) => {
+        this.setState({ nominationLimit: true });
+        modal.style.height = '0px';
+    }
+
     render() {
         return(
             <>
+            {this.state.nominationLimit ? <NominationLimitModal closeModal={this.closeModal}/> : null}
                 {this.state.nominations.length === 5 ?
                 <Banner>
                     <Envelope src={envelope}/>
