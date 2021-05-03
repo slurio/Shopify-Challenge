@@ -80,7 +80,7 @@ class Main extends React.Component {
     }
 
     closeModal = () => {
-        this.setState({ nominationLimit: true });
+        this.setState({ nominationLimit: false });
         let modal = document.querySelector('.nominationModal')
         modal.style.display = 'none';
     }
@@ -88,9 +88,11 @@ class Main extends React.Component {
     render() {
         return(
             <>
+                {this.state.nominationLimit ? <div style={{backgroundColor: '#fff', opacity: '0.7', position: 'absolute', zIndex: '1', width: '100vw', height: '200vh'}}></div> : null}
                 <Modal className='nominationModal' style={{display: 'none'}}>
+                    <Logo src={logo}/>
                     <h3>You have no more nominations left.</h3>
-                    <button onClick={this.closeModal}>ok</button>
+                    <CloseButton onClick={this.closeModal}>ok</CloseButton>
                 </Modal>
                 {this.state.nominations.length === 5 ?
                 <Banner>
@@ -101,7 +103,6 @@ class Main extends React.Component {
 
                 <Container>  
                     <HeaderContainer>
-                        <Logo src={logo}/>
                         <Title>The Shoppies</Title>
                     </HeaderContainer>
 
@@ -216,7 +217,24 @@ const Modal = styled.div`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #fff;
+    background-color: #008060;
     width: 450px;
     height: auto;
+    z-index: 2;
+`
+
+const CloseButton = styled.button`
+    padding: 6px 12px;
+    color: #ffffff;
+    background-color: #212326;
+    border: 1px solid #212326;
+    border-radius: 3px;
+    font-weight: bold;
+    text-transform: uppercase;
+    &:hover {
+        color: #fff;
+        background-color: #5fbb64;
+        border: 1px solid #5fbb64;
+        cursor: pointer;
+    }
 `
