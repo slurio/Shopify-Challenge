@@ -6,7 +6,6 @@ import logo from '../images/logo.gif';
 import envelope from '../images/envelope.gif';
 import search from '../images/search.svg';
 import { API_KEY } from '../environment';
-import NominationLimitModal from '../Components/NominationLimitModal';
 
 const BASE_URL = `https://www.omdbapi.com/?apikey=${API_KEY}&type=movie&s=`
 
@@ -64,7 +63,7 @@ class Main extends React.Component {
                 })
             } else if (this.state.nominations.length === 5) {
                 this.setState({ nominationLimit: true });
-                let modal = document.querySelector('.test');
+                let modal = document.querySelector('.nominationModal');
                 modal.style.display = 'flex';
             }
     }
@@ -82,20 +81,17 @@ class Main extends React.Component {
 
     closeModal = () => {
         this.setState({ nominationLimit: true });
-        let modal = document.querySelector('.test')
+        let modal = document.querySelector('.nominationModal')
         modal.style.display = 'none';
     }
 
     render() {
         return(
             <>
-            {this.state.nominationLimit ?  <Modal className='test'>
-            <h3>You have no more nominations left.</h3>
-            <button onClick={this.closeModal}>ok</button>
-        </Modal> : <Modal className='test' style={{display: 'none'}}>
-            <h3>You have no more nominations left.</h3>
-            <button onClick={this.closeModal}>ok</button>
-        </Modal>}
+                <Modal className='nominationModal' style={{display: 'none'}}>
+                    <h3>You have no more nominations left.</h3>
+                    <button onClick={this.closeModal}>ok</button>
+                </Modal>
                 {this.state.nominations.length === 5 ?
                 <Banner>
                     <Envelope src={envelope}/>
