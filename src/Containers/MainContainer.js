@@ -96,8 +96,7 @@ class Main extends React.Component {
                 </Modal>
                 {this.state.nominations.length === 5 ?
                 <Banner>
-                    <Envelope src={envelope}/>
-                    <Nomination>NOMINATIONS FILLED!</Nomination> 
+                    <Nomination>nomination limit filled</Nomination> 
                 </Banner> 
                 : null}
 
@@ -131,17 +130,14 @@ const Banner = styled.div`
     justify-content: center;
     align-content: center;
     align-item: center;
-    background-color: #008060;
+    background-color: #212326;
     letter-spacing: 3px;
     height: 8vh;
+    text-transform: uppercase;
+    padding: 15px;
 `
 
-const Envelope = styled.img`
-    width: 5vw;
-    height: 6vh;
-`
-
-const Nomination = styled.p`
+const Nomination = styled.h3`
     color: #fff;
 `
 
