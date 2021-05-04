@@ -25,7 +25,7 @@ export default Nominations;
 const NominationContainer = styled.div`
     background-color: #fff;
     width: 50vw;
-    height: 100%;
+    height: 50vh;
     margin-left: 10px;
     padding-bottom: 15px;
     border-radius: 2px;

@@ -43,7 +43,8 @@ export default MovieResults;
 const ResultContainer = styled.div`
     background-color: #fff;
     width: 50vw;
-    height: 100%;
+    height: 50vh;
+    overflow: scroll;
     margin-right: 10px;
     padding-bottom: 15px;
     border-radius: 2px;
