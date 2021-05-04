@@ -9,7 +9,7 @@ function Movie({movie, favorite, clickHandler}){
       <MovieContainer>
         <BulletPoint src={bullet}/>
         <MovieResult>
-          {`${movie['Title']} (${movie['Year']})`}
+          {`${movie['Title']} (${movie['Year']}) `}
           {favorite ? 
             <DeactivateButton>Nominate</DeactivateButton> 
             :<NominateButton onClick={() => clickHandler(movie)}>Nominate</NominateButton>
@@ -53,7 +53,7 @@ export default Movie;
   `
 
   const DeactivateButton = styled.button`
-    padding: 6px 8px;
+    padding: 6px 12px;
     color: #fff;
     background-color: #008060;
     index: 100;
