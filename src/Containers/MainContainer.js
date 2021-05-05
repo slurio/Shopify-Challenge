@@ -152,8 +152,8 @@ const Nomination = styled.h3`
 
 const Container =  styled.div`
     margin: 100px 200px;
-    @media (max-width: 768px) {
-        margin: 20px 30px;
+    @media (max-width: 480px) {
+        margin: 60px 15px;
     }
 `
 
@@ -208,9 +208,14 @@ const SearchBar = styled.input`
 
 const DataContainer = styled.div`
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     margin: 20px 0px;
+    @media (max-width: 480px) {
+        flex-direction: column;
+        justify-content: space-between;
+        border: 1px solid red;
+        height: 500px;
+    }
 `
 
 const Modal = styled.div`

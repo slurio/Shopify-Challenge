@@ -49,6 +49,10 @@ const ResultContainer = styled.div`
     padding-bottom: 15px;
     border-radius: 2px;
     box-shadow: 0px 2px 4px 2px rgb(0,0,0,.15);
+    @media (max-width: 480px) {
+        width: 100%;
+        height: 225px;
+    }
 `
 
 const ResultHeader = styled.header`

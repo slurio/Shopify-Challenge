@@ -29,7 +29,13 @@ const NominationContainer = styled.div`
     margin-left: 10px;
     padding-bottom: 15px;
     border-radius: 2px;
+    overflow: scroll;
     box-shadow: 0px 2px 4px 2px rgb(0,0,0,.15);
+    @media (max-width: 480px) {
+        margin: 0;
+        width: 100%;
+        height: 225px;
+    }   
 `
 
 const NominationHeader = styled.header`
