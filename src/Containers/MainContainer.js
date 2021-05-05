@@ -88,7 +88,8 @@ class Main extends React.Component {
     render() {
         return(
             <>
-                {this.state.nominationLimit ? <div style={{backgroundColor: '#fff', opacity: '0.7', position: 'absolute', zIndex: '1', width: '100vw', height: '200vh'}}></div> : null}
+                {this.state.nominationLimit ? <div style={{backgroundColor: '#fff', opacity: '0.7', position: 'absolute', zIndex: '1', width: '100vw', height: '100vh'}}></div> : null}
+   
                 <Modal className='nominationModal' style={{display: 'none'}}>
                     <Logo src={logo}/>
                     <h3>You have no more nominations left.</h3>
@@ -99,7 +100,6 @@ class Main extends React.Component {
                     <Nomination>nomination limit filled</Nomination> 
                 </Banner> 
                 : null}
-
                 <Container>  
                     <HeaderContainer>
                         <Title>The Shoppies</Title>
@@ -142,7 +142,7 @@ const Nomination = styled.h3`
 `
 
 const Container =  styled.div`
-    margin: 35px 200px;
+    margin: 100px 200px;
     @media (max-width: 768px) {
         margin: 20px 30px;
     }
