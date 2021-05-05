@@ -88,7 +88,7 @@ class Main extends React.Component {
     render() {
         return(
             <>
-                {this.state.nominationLimit ? <div style={{backgroundColor: '#fff', opacity: '0.7', position: 'absolute', zIndex: '1', width: '100vw', height: '100vh'}}></div> : null}
+                {this.state.nominationLimit ? <OpaqueBg></OpaqueBg> : null}
    
                 <Modal className='nominationModal' style={{display: 'none'}}>
                     <Logo src={logo}/>
@@ -122,6 +122,15 @@ class Main extends React.Component {
 }
 
 export default Main;
+
+const OpaqueBg = styled.div`
+    background-color: #fff;
+    opacity: 0.7; 
+    position: absolute; 
+    zIndex: 1; 
+    width: 100vw; 
+    height: 100vh;
+`
 
 const Banner = styled.div`
     display: flex;
