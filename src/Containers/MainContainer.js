@@ -89,7 +89,6 @@ class Main extends React.Component {
         return(
             <>
                 {this.state.nominationLimit ? <OpaqueBg></OpaqueBg> : null}
-   
                 <Modal className='nominationModal' style={{display: 'none'}}>
                     <Logo src={logo}/>
                     <h3>You have no more nominations left.</h3>
@@ -130,6 +129,9 @@ const OpaqueBg = styled.div`
     zIndex: 1; 
     width: 100vw; 
     height: 100vh;
+    @media (max-width: 480px) {
+        height: 140%;
+    }
 `
 
 const Banner = styled.div`
@@ -173,7 +175,12 @@ const Title = styled.h1`
 const Logo = styled.img`
     width: 6vw;
     height: 7vh;
-    margin: 0px;
+    margin: 0;
+    @media (max-width: 480px) {
+        width: 14vw;
+        height: 11vh;
+        margin: 0;
+    }
   `
 
 const SearchContainer = styled.div`
@@ -213,7 +220,6 @@ const DataContainer = styled.div`
     @media (max-width: 480px) {
         flex-direction: column;
         justify-content: space-between;
-        border: 1px solid red;
         height: 500px;
     }
 `
@@ -234,6 +240,14 @@ const Modal = styled.div`
     z-index: 2;
     padding: 20px;
     color: white;
+    @media (max-width: 480px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0;
+        width: 250px;
+        text-align: center;
+    }
 `
 
 const CloseButton = styled.button`
